@@ -1,0 +1,5 @@
+env/
+.vscode/
+*.replit
+index.html
+.gitattributes
