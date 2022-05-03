@@ -17,15 +17,14 @@ def count_years_of_work():
 
 def get_drinks_from_excel(excel_path):
 
-    wine_excel_df = pandas.read_excel(excel_path)
-    wine_excel_df.fillna(0, inplace=True)
-    wine_categories = collections.defaultdict(list)
+    wine_excel_df = pandas.read_excel(excel_path, keep_default_na=False)
+    wines_by_category = collections.defaultdict(list)
+    wines = wine_excel_df.to_dict('records')
 
-    for row_num in wine_excel_df.index:
-        row = wine_excel_df.iloc[row_num]
-        wine_categories[row.Категория].append(row.to_dict())
+    for wine in wines:
+        wines_by_category[wine['Категория']].append(wine)
 
-    return wine_categories
+    return wines_by_category
 
 
 if __name__ == '__main__':
