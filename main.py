@@ -41,7 +41,6 @@ if __name__ == '__main__':
 
     rendered_page = template.render(
         years_old=count_years_of_work(),
-        drink_types=drinks.keys(),
         drinks=drinks
     )
 
