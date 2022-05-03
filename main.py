@@ -8,11 +8,11 @@ from jinja2 import Environment, FileSystemLoader, select_autoescape
 
 def count_years_of_work():
 
-    year_founded = datetime.date(year=1920, month=1, day=1)
+    winery_foundation_year = 1920
     curr_year = datetime.date.today().year
 
-    years_old = curr_year - year_founded.year
-    return years_old
+    winery_age = curr_year - winery_foundation_year
+    return winery_age
 
 
 def get_drinks_from_excel(excel_path):
